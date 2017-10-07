@@ -21,7 +21,9 @@ body {
   visibility: hidden;
 }
 
-
+#meter{
+  visibility: hidden;
+}
 
 /* LAND */
 #wrap{
