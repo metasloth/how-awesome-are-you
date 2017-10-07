@@ -1,0 +1,17 @@
+{
+  "notAwesome": [{
+      "response": "Not even close.",
+      "sound": "soundfile.mp3"
+    }, {
+      "response": "¯\\_(ツ)_/¯",
+      "sound": "meh.mp3"
+    },
+    {
+      "response": "no.",
+      "sound": "nope.mp3"
+    }, {
+      "response": "As if!",
+      "sound": "soundfile.mp3"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Are You Awesome?</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrap"></div>
+  <!-- <button id="dev">dev</button> -->
+  <!-- Landing -->
+  <div id="land">
+    <h1 id="landH">Are You Awesome?</h1>
+    <p id="landP">Enter your name below to find out!</p>
+    <form id="f">
+      <input id="in" type="text" placeholder="First Name" />
+      <input id="sub" type="submit" value="CALCULATE" />
+    </form>
+  </div>
+
+  <!-- Not Sarah -->
+  <div id="lame">
+    <h2 id="randRes">Meh, you're not really awesome to be honest...</h2>
+    <button id="back">Try Someone Else</button>
+  </div>
+
+  <!-- Sarah -->
+  <div id="sarah">
+    <div id="msgs">
+      <p id="msg1">Calculating Awesomeness...</p>
+      <p id="msg2">Woah, what's this?</p>
+      <p id="msg3">A Super Cool Big Sister?!</p>
+      <p id="msg4">AND IT'S YOUR BIRTHDAY?!??!</p>
+      <p id="msg5">AWESOMENESS OVERLOAD!!1!</p>
+    </div>
+  </div>
+
+  <div id="meter">
+      <!-- <div id="meter" class="awesome"> -->
+          <!-- <div id="meterProg" class="wobX"></div> -->
+      <div id="meterProg" ></div>
+  </div>
+
+  <div id="final">
+    <p id="fin1">HAPPY BIRTHDAY SARAH!</p>
+    <p id="fin2">You're such an <span>awesome</span> person it broke my site!</p>
+  </div>
+
+  <script>
+    $('#dev').focus()
+    $('#dev').click(function() {
+        $('#sub').focus()
+        $('#land').removeClass("lame")
+        $('#land, #sarah, #meter').addClass("awesome")
+        awesome()
+      })
+      //$('#in').focus()
+    $('#f').on('submit', function(e) {
+      e.preventDefault()
+      if ($('#in').val().toLowerCase() === 'sarah') {
+        $('#sub').focus()
+        $('#land').removeClass("lame")
+        $('#land, #sarah, #meter').addClass("awesome")
+        awesome()
+      } else {
+        $('#sub').focus()
+        $('#land').addClass("lame")
+      }
+    })
+
+    // INDENT EVERYTHING!!!
+    function awesome() {
+      // calc
+      $('#msgs>p').eq(0).toggleClass('show')
+      $('#meterProg').toggleClass('wob1')
+        // oh no
+      setTimeout(function() {
+        $('#msgs>p').eq(0).toggleClass('show')
+        $('#msgs>p').eq(1).toggleClass('show')
+        $('#meterProg').toggleClass('wob1')
+        $('#meterProg').toggleClass('wob2')
+        $('#wrap').toggleClass('w2')
+          // super
+        setTimeout(function() {
+          $('#msgs>p').eq(1).toggleClass('show')
+          $('#msgs>p').eq(2).toggleClass('show')
+          $('#meterProg').toggleClass('wob2')
+          $('#meterProg').toggleClass('wob3')
+          $('#wrap').toggleClass('w3')
+            // bday
+          setTimeout(function() {
+            $('#msgs>p').eq(2).toggleClass('show')
+            $('#msgs>p').eq(3).toggleClass('show')
+            $('#meterProg').toggleClass('wob3')
+            $('#meterProg').toggleClass('wob4')
+            $('#wrap').toggleClass('w4')
+              // over
+            setTimeout(function() {
+              $('#msgs>p').eq(3).toggleClass('show')
+              $('#msgs>p').eq(4).toggleClass('show')
+              $('#meterProg').toggleClass('wob4')
+              $('#meterProg').toggleClass('wob5')
+              $('#wrap').toggleClass('w5')
+                // finish
+              setTimeout(function() {
+                $('#msgs>p').eq(4).toggleClass('show')
+                $('#meterProg').toggleClass('wob5')
+                $('#meterProg').toggleClass('wobX')
+                $('#final').toggleClass('show')
+                $('#final>p').eq(0).toggleClass('show')
+                setTimeout(function() {
+                   $('#final>p').eq(1).toggleClass('show')
+                }, 1000)
+              }, 2000)
+            }, 3000)
+          }, 3000)
+        }, 3000)
+      }, 4000)
+    }
+
+
+    $('#back').click(function() {
+      $('#land').removeClass("lame")
+      $('#in').focus()
+    })
+  </script>
+</body>
+
+</html>
