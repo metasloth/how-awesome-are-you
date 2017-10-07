@@ -21,9 +21,7 @@ body {
   visibility: hidden;
 }
 
-#meter{
-  visibility: hidden;
-}
+
 
 /* LAND */
 #wrap{
@@ -245,6 +243,7 @@ p#msg5.show {
 
 
 #meter {
+  display: none;
   transform: translateX(200%);
   position: absolute;
   width: 50%;
@@ -255,6 +254,7 @@ p#msg5.show {
   border-radius: 6px;
 }
 #meter.awesome {
+  display: block;
   visibility: visible;
   opacity: 1;
   transform: translateX(0%);
